@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>login</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+<body class="login_page">
+	<div class="wrap">
+    	<div class="logo"><a href="/"></a></div>
+        <form id="form_login" class="loginPannel" method="post" action="#" task="submitLogin" onSubmit="return submitLoginPannel(this);">
+       		<h3>Log in with your Email</h3>
+        	<ul>
+            	<li class="inputbox">
+                	<input type="text" class="validate" placeholder="Email" rule="email" name="email" msg="Please check your email format." empty_msg="Please enter your Email.">
+                </li>
+                <li class="inputbox">
+                	<input type="password" class="validate" placeholder="Password" rule="password" msg="Please enter password." autocomplete="off" name="password">
+                </li>
+                <li class="submit">
+                    <input class="btn" type="submit" value="Sign in">
+                </li>
+                <li class="register">Don't have an account? <a href="javascript:;" onClick="$('.loginPannel').hide();$('#form_register').show();" rel="nofollow">Register</a></li>
+            </ul>
+        </form>
+        <form id="form_register" class="loginPannel" method="post" action="#" task="submitRegist"  onsubmit="return submitLoginPannel(this);" style="display:none">
+       		<h3>Create a New Account</h3>
+        	<ul>
+            	<li class="inputbox">
+                	<input type="text" class="validate" placeholder="Username" name="username" msg="Please enter username between 3-20 characters." rule="username" maxlength="20">
+                </li>
+                <li class="inputbox">
+                	<input type="text" class="validate" placeholder="Email" name="email" rule="email" msg="Please check your email format." empty_msg="Please enter your Email.">
+                </li>
+                <li class="inputbox">
+                	<input name="password" type="password" class="validate" maxlength="20" placeholder="Password" autocomplete="off" rule="password" equal="confirm_password" msg="Please enter password." equal_msg="The password you entered is incorrect. Please try again.">
+                    <span class="password_tips">6–20 characters</span>
+             </li>
+                 <li class="inputbox">
+                	<input type="password" class="validate" placeholder="Password again" maxlength="20" autocomplete="off" name="password2" rule="password"  msg="Please enter confirm password." id="confirm_password">
+                </li>
+              
+                <li class="submit">
+                    <input class="btn" type="submit" value="Create Your Account">
+                </li>
+                <li class="register">Already have an account? <a href="javascript:;" onClick="$('.loginPannel').hide();$('#form_login').show();" rel="nofollow">Sign In</a></li>
+            </ul>
+        </form>
+        <h4 class="separator"><span>Or</span></h4>
+        <ul class="other_type">
+        	<li>
+            	<a href="#" class="facebook">Sign In with Facebook</a>
+            </li>
+            <li>
+            	<a href="#" class="twitter">Sign In with Twitter</a>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="js/jq.common.js"></script>
+</body>
+</html>

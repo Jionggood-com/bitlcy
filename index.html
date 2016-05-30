@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Shortener</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+</head>
+
+<body>
+<div class="top">
+	<div class="wrap">
+    	<div class="logo"><a href="/"></a></div>
+        <div class="menu">
+        	<ul>
+            	<li><a href="#">Support</a></li>
+                <li><a href="#">Developers</a></li>
+                <li><a href="login.html">Sign In</a></li>
+                <li><a href="login.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wrap">
+	<!--<div class="index_logo">
+    	<a href="/"></a>
+    </div>-->
+    <h1 class="page_title">Bitlcy Link Shortener</h1>
+</div>
+<div class="wrap">
+	<div class="search">
+    	<form id="ShortenForm" method="post" action="#">
+        	<!--<input class="inputchang" type="text" placeholder="Paste a link to shorten it" name="url" msg="Unable to shorten that link. It is not a valid url." onpaste="mousePaste(this,event)">-->
+            <input class="inputchang" type="text" placeholder="Paste a link to shorten it" name="url" msg="Unable to shorten that link. It is not a valid url.">
+            <input class="btn" type="submit" value="Shorten">
+        </form>
+    </div>
+</div>
+<div class="wrap">
+	<div class="shorten_list">
+        <h4 class="separator"><span>RECENTLY SHORTENED LINKS</span></h4>
+        <ul class="link_list">
+        	<li>
+            	<span class="favicon"><img src="http://www.banggood.com/favicon.ico"></span>
+                <span class="newlink"><a href="http://bitlcy.com/1mV76yG">http://bitlcy.com/1mV76yG</a><a href="javascript:;" class="copy">Copy</a></span>
+                <span class="title">Online Shopping for Cool Gadgets</span>
+                <span class="origin"><a href="http://www.banggood.com/">Online Shopping for Cool Gadgets, RC helicopter & Quadcopter, Mobile phone, Fashion at Banggood.com</a></span>
+            </li>
+           
+        </ul>
+    </div>
+</div>
+<div class="wrap">
+	<div class="footer">
+    	<div class="foot_link">
+    		<a href="#">About</a> <a href="#">Contact us</a> <a href="#">Support</a> <a href="#">Developers</a> <a href="#">Blog</a>
+        </div>
+        <div class="copyright"> © 2015 Bitlcy™</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jq.common.js"></script>
+<script type="text/javascript">
+	$("#ShortenForm .inputchang").val('');
+	function autocopy(){
+		$(".copy").zclip({
+			path: "js/ZeroClipboard.swf",
+			copy: function(){
+				return $(this).prev().attr("href");
+			},
+		    afterCopy:function(){
+		       $(this).parent().before('<span class="copied">'+$(this).prev().attr("href")+'</span>');
+			   $(".copied").animate({top:'-50px',opacity:'0'});
+			   setTimeout(function(){
+					$(".copied").remove();
+				},600);
+		    }
+		});
+	}
+	autocopy();
+</script>
+</body>
+</html>
